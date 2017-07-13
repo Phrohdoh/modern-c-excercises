@@ -1,13 +1,17 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+void doit() {
+    char str[BUFSIZ];
+
+    printf("Enter a dollar amount (with 2 decimals): ");
+    scanf("%s", str);
+
+    float in = strtof(str, NULL);
+    printf("%.2f with 5%% tax = %.2f\n", in, in * 1.05);
+}
 
 int main() {
-    int a, b, c;
-    float x, y, z;
-
-    // TODO: Understand why a, b, and c have garbage values while
-    //         x, y, and z are _always_ 0.00 (repeating) (macOS 10.12.4, clang-800.0.42.1 x86_64-apple-darwin16.5.0)
-    printf("%d %d %d\n", a, b, c);
-    printf("%.10f %.10f %.10f\n", x, y, z);
-
+    doit();
     return 0;
 }
