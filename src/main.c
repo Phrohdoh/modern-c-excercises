@@ -2,12 +2,17 @@
 #include <stdlib.h>
 
 void doit() {
-    float x;
+    int price, shares;
+    float num, denom, value;
 
-    printf("Enter a dollar amount (with 2 decimals): ");
-    scanf("%f", &x);
+    printf("Enter share price (must include a fraction): ");
+    scanf("%d%f/%f", &price, &num, &denom);
+    printf("Enter number of shares: ");
+    scanf("%d", &shares);
 
-    printf("%.2f with 5%% tax = %.2f\n", x, x * 1.05);
+    value = (price + (num/denom)) * shares;
+
+    printf("Value of holdings: $%.2f\n", value);
 }
 
 int main() {
